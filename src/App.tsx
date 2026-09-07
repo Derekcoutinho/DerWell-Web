@@ -48,9 +48,25 @@ const projects: Project[] = [
 const categories: Category[] = ['Todos', 'Sites', 'Identidade', 'Experiências'];
 
 function Logo() {
-  return <a href="#topo" className="focus-ring flex items-center gap-3" data-testid="link-logo"><span className="grid h-8 w-8 place-items-center rounded-full bg-[hsl(var(--foreground))] text-[hsl(var(--background))] font-display text-lg italic">d</span><span className="font-mono-custom text-[11px] font-medium uppercase tracking-[.18em]">DerWell <span className="text-[hsl(var(--accent))]">Web</span></span></a>;
-}
+  return (
+    <a
+      href="#topo"
+      className="focus-ring flex items-center gap-3"
+      data-testid="link-logo"
+    >
+      <img
+        src="/logo.png"
+        alt="DerWell Web"
+        className="h-9 w-9 rounded-full object-cover"
+      />
 
+      <span className="font-mono-custom text-[11px] font-medium uppercase tracking-[.18em]">
+        DerWell{" "}
+        <span className="text-[hsl(var(--accent))]">Web</span>
+      </span>
+    </a>
+  );
+}
 function ProjectArt({ project, compact = false }: { project: Project; compact?: boolean }) {
   return <div className={`project-cover relative h-full w-full overflow-hidden ${project.palette}`}>
     <div className="absolute inset-0" style={{ background: project.pattern }} />
